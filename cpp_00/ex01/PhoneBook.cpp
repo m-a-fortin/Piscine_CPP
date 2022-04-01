@@ -6,7 +6,7 @@
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 17:59:45 by mafortin          #+#    #+#             */
-/*   Updated: 2022/04/01 14:15:33 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/04/01 18:07:04 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 #include <cstdlib>
 #include <unistd.h>
 
-
+//Constructeur, init nb of contact and the oldest contact to 0
 PhoneBook::PhoneBook(void)
 {
 	contact_nb = 0;
 	old_contact = 0;
 }
-
+//Gets input from user and return a string. Loop until the input is not empty
 std::string	PhoneBook::add_input(std::string msg)
 {
 	std::string str;

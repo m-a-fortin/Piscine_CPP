@@ -6,14 +6,18 @@
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 15:51:21 by mafortin          #+#    #+#             */
-/*   Updated: 2022/03/22 12:35:55 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/04/01 18:07:32 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
+//Function that allocate a Zombie object, sets his name and return it.
 Zombie *newZombie( std::string name )
 {
-	return (new Zombie(name));
+	Zombie *newZombie = new Zombie;
+	
+	newZombie->setName(name);
+	return (newZombie);
 }
 

@@ -6,18 +6,18 @@
 #    By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/14 18:23:15 by mafortin          #+#    #+#              #
-#    Updated: 2022/04/01 18:12:52 by mafortin         ###   ########.fr        #
+#    Updated: 2022/04/01 18:18:21 by mafortin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	zombiehorde
+NAME	=	str_ptr_ref
 FLAGS	=	-Wall -Werror -Wextra -Wpedantic -Wconversion -std=c++98
 CC		=	clang++
 RM		=	rm -rf
 
 OBJ		=	obj
 
-SRCS	=	Zombie.cpp main.cpp ZombieHorde.cpp
+SRCS	=	main.cpp
 OBJS	=	$(addprefix $(OBJ)/, $(SRCS:.cpp=.o))
 
 $(OBJ)/%.o:		%.cpp

@@ -6,7 +6,7 @@
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 15:43:26 by mafortin          #+#    #+#             */
-/*   Updated: 2022/03/22 12:18:44 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/04/01 15:46:45 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 class Zombie
 {
 	public:
-		void	announce();
-		Zombie(std::string name);
 		~Zombie();
+		void		announce();
+		void		setName(std::string set);
 	private:
 		std::string name;
 };
