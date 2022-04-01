@@ -6,7 +6,7 @@
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 17:59:45 by mafortin          #+#    #+#             */
-/*   Updated: 2022/03/28 15:54:10 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/04/01 14:15:33 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,12 +103,21 @@ void	PhoneBook::search_contact()
 		return ;
 	while (true)
 	{
-		std::cout << "Please enter a contact index" << std::endl;
+		std::cout << "\nPlease enter a contact index" << std::endl;
 		std::getline(std::cin, input);
 		if (input == "EXIT")
 			break ;
+		const char *str = input.c_str();
 		long	nb = std::atol(input.c_str());
 		nb--;
+		for (int i = 0; str[i]; i++)
+		{
+			if (isdigit(str[i]) == 0)
+			{
+				nb = -42;
+				break ;
+			}
+		}
 		if (nb < 0 || nb >= contact_nb)
 			std::cout << "Nice try! Please enter a real index! or EXIT" << std::endl;
 		else
@@ -116,10 +125,15 @@ void	PhoneBook::search_contact()
 			std::cout << "Information of Contact Index # " << nb + 1 << std::endl;
 			sleep(1);
 			std::cout << "First Name: " << contact[nb].getContactInfo("first_name") << std::endl;
+			sleep(1);
 			std::cout << "Last Name: " << contact[nb].getContactInfo("last_name") << std::endl;
+			sleep(1);
 			std::cout << "Nickname: " << contact[nb].getContactInfo("nickname") << std::endl;
+			sleep(1);
 			std::cout << "Phonenumber: " << contact[nb].getContactInfo("phone") << std::endl;
-			std::cout << "Darkest Secret: (shh dont tell anyone)" << contact[nb].getContactInfo("secret") << "\n" << std::endl;
+			sleep(1);
+			std::cout << "Darkest Secret (shh dont tell anyone): " << contact[nb].getContactInfo("secret") << "\n" << std::endl;
+			sleep(1);
 			break ;
 		}
 	}

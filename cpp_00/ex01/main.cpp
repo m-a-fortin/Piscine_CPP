@@ -6,7 +6,7 @@
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 18:25:01 by mafortin          #+#    #+#             */
-/*   Updated: 2022/03/28 11:38:52 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/04/01 14:03:58 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	main(void)
 		if (user_input == "EXIT")
 		{
 			std::cout << "Deleting all contacts" << std::flush;
-			sleep(2);
+			sleep(1);
 			std::cout << ". " << std::flush;
 			sleep(1);
 			std::cout << ". " << std::flush;
@@ -38,12 +38,9 @@ int	main(void)
 			std::cout << "." << std::flush;
 			sleep(1);
 			std::cout << "\nCongratulations you lost all your contacts !\n" << std::flush;
-			sleep(2);
+			sleep(1);
 			std::cout << "Exiting" << std::endl;
 			sleep(1);
-			std::cout << "Job 1, './phonebook' terminated by signal SIGSEGV (Address boundary error)" << std::endl;
-			sleep(3);
-			std::cout << "Just kidding. Bye !" << std::endl;
 			return (0);
 		}
 		if (user_input == "ADD")
