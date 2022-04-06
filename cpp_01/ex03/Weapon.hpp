@@ -6,7 +6,7 @@
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 18:35:53 by mafortin          #+#    #+#             */
-/*   Updated: 2022/04/04 20:57:06 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/04/06 14:03:39 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 class Weapon
 {
 private:
-	 std::string type;
+	std::string type;
 public:
 	const std::string&	getType();
 	void		setType(std::string name);
