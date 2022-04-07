@@ -6,7 +6,7 @@
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 14:05:16 by mafortin          #+#    #+#             */
-/*   Updated: 2022/04/06 14:59:18 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/04/06 15:19:58 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,21 +35,33 @@ char *get_text(char **argv)
 	return (buf);
 }
 
-std::string find_loop(const std::string str, const std::string s1, const std::string s2)
+std::string find_loop(std::string str, const std::string s1, const std::string s2)
 {
+	std::size_t	i = 0;
 	std::size_t pos = 0;
 	std::string	final;
-	std::string::iterator it = str.begin(); 
-	while ()
+	 
+	while (str[i])
 	{
 		pos = str.find(s1, pos);
-		if (pos != std::string::npos)
+		if (pos == std::string::npos)
+			break ;
+		while (pos != i)
 		{
-
+			final.append(str[i], 1);
+			i++;
 		}
-		else
-		
+		for(int j = 0; j != s2.size(); j++)
+			final.append(s2[j], 1);
+		i += s1.size();
 	}
+	while (str[i])
+	{
+		final.append(str[i], 1);
+		i++;
+	}
+	final.append("\0", 1);
+	return (final);
 }
 
 int	main(int argc, char **argv)
@@ -62,7 +74,7 @@ int	main(int argc, char **argv)
 	char *buf = get_text(argv);
 	if (!buf)
 		return (1);
-	const std::string str = std::string(buf);
+	std::string str = std::string(buf);
 	const std::string s1 = std::string(argv[2]);
 	const std::string s2 = std::string(argv[3]);
 	std::string	final = find_loop(str, s1, s2);
