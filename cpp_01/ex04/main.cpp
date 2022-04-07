@@ -22,11 +22,11 @@ char *get_text(char **argv)
 	if (!file.is_open())
 	{
 		file.close();
-		std::cout << "Invalid file" << std::endl;
+		std::cout << "Error:\n" << "Invalid file" << std::endl;
 		return (NULL);
 	}
 	file.seekg(0, file.end);
-	int	len = file.tellg();
+	long	len = file.tellg();
 	file.seekg(0, file.beg);
 	char	*buf = new char [len + 1];
 	file.read(buf, len);
@@ -35,48 +35,48 @@ char *get_text(char **argv)
 	return (buf);
 }
 
-std::string find_loop(std::string str, const std::string s1, const std::string s2)
+void	replace_loop(std::string *str, const std::string s1, const std::string s2)
 {
-	std::size_t	i = 0;
-	std::size_t pos = 0;
-	std::string	final;
-	 
-	while (str[i])
+	std::size_t	pos = str->find(s1, 0);
+	while (pos != std::string::npos)
 	{
-		pos = str.find(s1, pos);
-		if (pos == std::string::npos)
-			break ;
-		while (pos != i)
-		{
-			final.append(str[i], 1);
-			i++;
-		}
-		for(int j = 0; j != s2.size(); j++)
-			final.append(s2[j], 1);
-		i += s1.size();
+		str->erase(pos, s1.length());
+		str->insert(pos, s2);
+		pos += s2.length();
+		pos =str->find(s1, pos);
 	}
-	while (str[i])
-	{
-		final.append(str[i], 1);
-		i++;
-	}
-	final.append("\0", 1);
-	return (final);
 }
 
 int	main(int argc, char **argv)
 {
 	if (argc != 4)
 	{
-		std::cout << "Invalid # of arguments" << std::endl;
+		std::cout << "Error\nInvalid # of arguments" << std::endl;
+		return (1);
+	}
+	if (!argv[2][0] || !argv[3][0])
+	{
+		std::cout << "Error\nCannot take empty string as argument" << std::endl;
 		return (1);
 	}
 	char *buf = get_text(argv);
 	if (!buf)
 		return (1);
-	std::string str = std::string(buf);
+	std::string *str = new std::string;
+	*str = std::string(buf);
+	delete[] buf;
 	const std::string s1 = std::string(argv[2]);
 	const std::string s2 = std::string(argv[3]);
-	std::string	final = find_loop(str, s1, s2);
-	delete[] buf;
+	replace_loop(str, s1, s2);
+	std::string	name = std::string(argv[1]) + ".replace";
+	std::fstream file;
+	file.open(name.c_str(), std::fstream::out);
+	if (!file.is_open())
+	{
+		std::cout << "Error when trying to create file named : " << name << std::endl;
+		return (1);
+	}
+	file.write(str->c_str(), (long)str->length());
+	file.close();
+	delete str;
 }
