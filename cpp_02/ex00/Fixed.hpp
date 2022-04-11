@@ -6,7 +6,8 @@ class	Fixed
 	public:
 		Fixed();
 		~Fixed();
-		Fixed(const Fixed& cpy);
+		Fixed(Fixed& cpy);
+		Fixed&	operator=(Fixed&	fixed);
 		int	getRawBits() const;
 		void	setRawBits( int const raw);
 	private:

@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/11 11:29:09 by mafortin          #+#    #+#             */
-/*   Updated: 2022/04/11 11:54:58 by mafortin         ###   ########.fr       */
+/*   Created: 2022/04/11 15:38:21 by mafortin          #+#    #+#             */
+/*   Updated: 2022/04/11 17:10:04 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
-#include <iostream>
+#pragma once
 
-int main( void ) 
+class	Fixed
 {
-	Fixed a;
-	//a.setRawBits(10);
-	Fixed b( a );
-	Fixed c;
-	c = b;
-	//b.setRawBits(20);
-	//c.setRawBits(30);
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
-	return 0;
-}
+	public:
+		Fixed();
+		~Fixed();
+		Fixed(const Fixed& cpy);
+		Fixed(const int value);
+		Fixed(const float value);
+		Fixed&	operator=(Fixed	fixed);
+		void	operator<<(Fixed fixed);
+		float	toFloat( void ) const;
+		int		toInt( void ) const;
+	private:
+		int			value;
+		bool				f;
+		bool				i;
+		static const int	bits = 8;
+};
