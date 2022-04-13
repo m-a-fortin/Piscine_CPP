@@ -6,13 +6,13 @@
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 11:29:09 by mafortin          #+#    #+#             */
-/*   Updated: 2022/04/11 17:33:53 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/04/13 14:56:45 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include <iostream>
-using std::co;
+
 int main( void )
 {
 	Fixed a;

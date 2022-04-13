@@ -6,7 +6,7 @@
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 15:38:21 by mafortin          #+#    #+#             */
-/*   Updated: 2022/04/11 17:10:04 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/04/13 14:53:13 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,8 @@ class	Fixed
 		void	operator<<(Fixed fixed);
 		float	toFloat( void ) const;
 		int		toInt( void ) const;
+		int		getRawBits( void ) const;
 	private:
 		int			value;
-		bool				f;
-		bool				i;
 		static const int	bits = 8;
 };
