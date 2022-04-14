@@ -6,24 +6,28 @@
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 15:42:38 by mafortin          #+#    #+#             */
-/*   Updated: 2022/04/01 18:10:52 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/04/14 16:11:17 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
+#include <string>
+
+Zombie::Zombie(){
+}
 
 //Destructor
 Zombie::~Zombie(void)
 {
-	std::cout << Zombie::name << " has been destroyed with a stick in the brain." << std::endl;
+	std::cout << name << " has been destroyed with a stick in the brain." << std::endl;
 }
-//Setter for name member.
-void	Zombie::setName(std::string set)
-{
-	name = set;
+
+void	Zombie::setName(std::string name){
+	this->name = name;
 }
+
 //Announce itself using the name member.
-void	Zombie::announce(void)
+void	Zombie::announce(void) const
 {
-	std::cout << Zombie::name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }

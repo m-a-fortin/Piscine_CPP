@@ -6,7 +6,7 @@
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 16:37:43 by mafortin          #+#    #+#             */
-/*   Updated: 2022/04/01 18:11:51 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/04/14 16:12:33 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,7 @@
 Zombie	*zombieHorde( int N, std::string name)
 {
 	Zombie *horde = new Zombie[N];
-	for (int i = 0; i < N; i++)
-	{
+	for(int i = 0; i < N; i++)
 		horde[i].setName(name);
-	}
 	return (horde);
 }
