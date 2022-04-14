@@ -6,11 +6,11 @@
 #    By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/14 18:23:15 by mafortin          #+#    #+#              #
-#    Updated: 2022/04/14 12:39:22 by mafortin         ###   ########.fr        #
+#    Updated: 2022/04/14 12:39:33 by mafortin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	fixed01
+NAME	=	fixed02
 FLAGS	=	-Wall -Werror -Wextra -Wpedantic -Wconversion -std=c++98
 CC		=	clang++
 RM		=	rm -rf
