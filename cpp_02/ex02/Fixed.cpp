@@ -11,7 +11,7 @@ Fixed::Fixed(int const value){
 }
 
 Fixed::Fixed(float const value){
-	this->value = (int)roundf(value * (float)(1 << this->bits));
+	this->value = (int)roundf(value * (float)(1 << this->bits));//256
 }
 
 int	Fixed::getRawBits( void ) const {
@@ -72,11 +72,13 @@ Fixed	Fixed::operator+(const Fixed& other) const{
 		return (ret);
 }
 
+//Multiplication de deux fixed point (representer 24 bit pour entier et 8 pour decimal) devient
+//32 bit pour l'entier et 0 pour les decimal. C'est pour ca qu'on bit shift le resultat
 Fixed	Fixed::operator*(const Fixed& other) const{
 	Fixed ret;
 	int multi;
 	multi = this->getRawBits() * other.getRawBits();
-	ret.setRawBits((int)multi >> bits);
+	ret.setRawBits(multi >> bits);
 	return (ret);
 }
 
@@ -98,9 +100,10 @@ Fixed&	Fixed::operator++(){
 	this->value++;
 	return (*this);
 }
+
 Fixed	Fixed::operator++(int){
 	Fixed	ret = *this;
-	++*this;
+	++this->value;
 	return(ret);
 }
 
@@ -110,7 +113,7 @@ Fixed& Fixed::operator--(){
 }
 Fixed	Fixed::operator--(int){
 	Fixed	ret = *this;
-	--*this;
+	--this->value;
 	return (ret);
 }
 
