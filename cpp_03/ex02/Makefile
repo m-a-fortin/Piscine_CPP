@@ -10,14 +10,14 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	scavtrap
+NAME	=	fragfrap
 FLAGS	=	-Wall -Werror -Wextra -Wpedantic -Wconversion -std=c++98
 CC		=	clang++
 RM		=	rm -rf
 
 OBJ		=	obj
 
-SRCS	=	main.cpp ClapTrap.cpp ScavTrap.cpp
+SRCS	=	main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 OBJS	=	$(addprefix $(OBJ)/, $(SRCS:.cpp=.o))
 
 $(OBJ)/%.o:		%.cpp
