@@ -6,7 +6,7 @@
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 12:45:50 by mafortin          #+#    #+#             */
-/*   Updated: 2022/04/25 14:45:52 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/04/25 18:24:03 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ public:
 	DiamondTrap(const DiamondTrap&);
 	DiamondTrap(const std::string& name);
 	DiamondTrap& operator=(const DiamondTrap&);
-	~DiamondTrap();
+	virtual	~DiamondTrap();
 	void attack(const std::string& target);
 	void	whoAmI() const;
 private:

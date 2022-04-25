@@ -6,7 +6,7 @@
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 15:50:01 by mafortin          #+#    #+#             */
-/*   Updated: 2022/04/20 15:50:07 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/04/25 18:23:28 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ public:
 	ScavTrap(std::string name);
 	ScavTrap(const ScavTrap&);
 	ScavTrap&	operator=(const ScavTrap&);
-	~ScavTrap();
+	virtual	~ScavTrap();
 	void	guardGate();
 private:
 };

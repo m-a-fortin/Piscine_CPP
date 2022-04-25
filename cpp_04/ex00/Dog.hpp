@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/20 12:39:46 by mafortin          #+#    #+#             */
-/*   Updated: 2022/04/25 18:23:34 by mafortin         ###   ########.fr       */
+/*   Created: 2022/04/25 17:17:10 by mafortin          #+#    #+#             */
+/*   Updated: 2022/04/25 17:46:54 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include <string>
+#include "Animal.hpp"
 
-class ClapTrap
+class Dog : public Animal
 {
 public:
-	ClapTrap();
-	ClapTrap(std::string name);
-	ClapTrap(const ClapTrap&);
-	ClapTrap& operator=(const ClapTrap&);
-	virtual	~ClapTrap();
-	void	attack(const std::string& target);
-	void	takeDamage(unsigned int amount);
-	void	beRepaired(unsigned int amount);
+	Dog();
+	Dog(const Dog&);
+	Dog& operator=(const Dog&);
+	~Dog();
+	void	makeSound() const;
 protected:
-	std::string	name;
-	int			hp;
-	int			ep;
-	int			ad;
+	std::string type;
 };
