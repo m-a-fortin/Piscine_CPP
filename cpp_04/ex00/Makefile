@@ -6,7 +6,7 @@
 #    By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/14 18:23:15 by mafortin          #+#    #+#              #
-#    Updated: 2022/04/25 17:47:43 by mafortin         ###   ########.fr        #
+#    Updated: 2022/04/25 18:41:14 by mafortin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ RM		=	rm -rf
 
 OBJ		=	obj
 
-SRCS	=	main.cpp Cat.cpp Animal.cpp Dog.cpp
+SRCS	=	main.cpp Cat.cpp Animal.cpp Dog.cpp WrongCat.cpp WrongAnimal.cpp
 OBJS	=	$(addprefix $(OBJ)/, $(SRCS:.cpp=.o))
 
 $(OBJ)/%.o:		%.cpp

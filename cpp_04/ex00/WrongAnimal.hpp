@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -13,15 +13,15 @@
 #pragma once
 #include <string>
 
-class Animal
+class WrongAnimal
 {
 public:
-	Animal();
-	Animal(const Animal&);
-	Animal& operator=(const Animal&);
-	virtual ~Animal();
-	virtual	void	makeSound() const;
-	virtual std::string	getType() const;
+	WrongAnimal();
+	WrongAnimal(const WrongAnimal&);
+	WrongAnimal& operator=(const WrongAnimal&);
+	virtual ~WrongAnimal();
+	void	makeSound() const;
+	std::string	getType() const;
 protected:
 	std::string type;
 };

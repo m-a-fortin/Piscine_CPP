@@ -6,7 +6,7 @@
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 17:17:10 by mafortin          #+#    #+#             */
-/*   Updated: 2022/04/25 17:41:36 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/04/25 18:33:16 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,9 @@ public:
 	Cat();
 	Cat(const Cat&);
 	Cat& operator=(const Cat&);
-	~Cat();
-	void	makeSound() const;
+	virtual ~Cat();
+	virtual void	makeSound() const;
+	virtual std::string	getType() const;
 protected:
 	std::string type;
 };

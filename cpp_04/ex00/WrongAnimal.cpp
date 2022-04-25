@@ -1,41 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/25 17:18:12 by mafortin          #+#    #+#             */
-/*   Updated: 2022/04/25 18:34:11 by mafortin         ###   ########.fr       */
+/*   Created: 2022/04/25 17:09:42 by mafortin          #+#    #+#             */
+/*   Updated: 2022/04/25 18:33:20 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "WrongAnimal.hpp"
 #include <iostream>
 
-Dog::Dog() : type("Dog"){
+WrongAnimal::WrongAnimal() : type("WrongAnimal"){
 	std::cout << "Animal of type: " << this->type << " default constructor" << std::endl; 
 }
 
-Dog::Dog(const Dog& other){
+WrongAnimal::WrongAnimal(const WrongAnimal& other){
 	*this = other;
 	std::cout << "Animal of type: " << this->type << " copy constructor" << std::endl; 
 }
 
-Dog& Dog::operator=(const Dog& rhs){
+WrongAnimal& WrongAnimal::operator=(const WrongAnimal& rhs){
 	(void)rhs;
 	std::cout << "Animal of type: " << this->type << " copy assignment operator called" << std::endl;
 	return *this;
 }
 
-Dog::~Dog(){
+WrongAnimal::~WrongAnimal(){
 	std::cout << "Animal of type: " << this->type << " destructor called." << std::endl;
 }
 
-std::string	Dog::getType() const{
+std::string	WrongAnimal::getType() const{
 	return this->type;
 }
 
-void	Dog::makeSound() const{
-	std::cout << "The animal of type " << this->type << " makes the sound :\nWoof woof" << std::endl;
+void	WrongAnimal::makeSound() const{
+	std::cout << "The animal of type " << this->type << " makes the sound:\nWrong usage of inheritance." << std::endl;
 }
