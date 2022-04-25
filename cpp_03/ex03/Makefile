@@ -6,18 +6,18 @@
 #    By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/14 18:23:15 by mafortin          #+#    #+#              #
-#    Updated: 2022/04/25 12:41:30 by mafortin         ###   ########.fr        #
+#    Updated: 2022/04/25 14:40:18 by mafortin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	fragtrap
-FLAGS	=	-Wall -Werror -Wextra -Wpedantic -Wconversion -std=c++98
+NAME	=	diamondtrap
+FLAGS	=	-Wall -Werror -Wextra -Wpedantic -Wconversion -Wshadow -std=c++98
 CC		=	c++
 RM		=	rm -rf
 
 OBJ		=	obj
 
-SRCS	=	main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
+SRCS	=	main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 OBJS	=	$(addprefix $(OBJ)/, $(SRCS:.cpp=.o))
 
 $(OBJ)/%.o:		%.cpp

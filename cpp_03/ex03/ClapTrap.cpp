@@ -6,16 +6,20 @@
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 12:43:43 by mafortin          #+#    #+#             */
-/*   Updated: 2022/04/25 11:48:35 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/04/25 15:15:50 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include <iostream>
 
-ClapTrap::ClapTrap() : name("John Doe"), hp(10), ep(10), ad(0){std::cout << "ClapTrap " << this->name << " Default constructor called" << std::endl;}
+ClapTrap::ClapTrap() : name("John Doe"), hp(10), ep(10), ad(0){
+	std::cout << "ClapTrap " << this->name << " Default constructor called" << std::endl;
+}
 
-ClapTrap::ClapTrap(std::string name) : name(name), hp(10), ep(10), ad(0){ std::cout << "ClapTrap " << this->name << " String constructor called" << std::endl;}
+ClapTrap::ClapTrap(const std::string& name) : name(name), hp(10), ep(10), ad(0){
+ std::cout << "ClapTrap " << this->name << " String constructor called" << std::endl;
+}
 
 ClapTrap::ClapTrap(const ClapTrap& other){
 	std::cout << "ClapTrap " << this->name << " Copy constructor called" << std::endl;
@@ -23,11 +27,11 @@ ClapTrap::ClapTrap(const ClapTrap& other){
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& rhs){
-	std::cout << "ClapTrap " << this->name << " Copy assignment operator called" << std::endl;
 	this->hp = rhs.hp;
 	this->ep = rhs.ep;
 	this->ad = rhs.ad;
 	this->name = rhs.name;
+	std::cout << "ClapTrap " << this->name << " Copy assignment operator called" << std::endl;
 	return *this;
 }
 

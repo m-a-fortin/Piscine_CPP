@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/20 12:39:46 by mafortin          #+#    #+#             */
-/*   Updated: 2022/04/25 11:51:42 by mafortin         ###   ########.fr       */
+/*   Created: 2022/04/20 15:50:01 by mafortin          #+#    #+#             */
+/*   Updated: 2022/04/25 14:48:07 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include <string>
+#include "ClapTrap.hpp"
 
-class ClapTrap
+class ScavTrap : virtual public ClapTrap
 {
 public:
-	ClapTrap();
-	ClapTrap(std::string name);
-	ClapTrap(const ClapTrap&);
-	ClapTrap& operator=(const ClapTrap&);
-	~ClapTrap();
-	void	attack(const std::string& target);
-	void	takeDamage(unsigned int amount);
-	void	beRepaired(unsigned int amount);
-protected:
-	std::string	name;
-	int			hp;
-	int			ep;
-	int			ad;
+	ScavTrap();
+	ScavTrap(const std::string& name);
+	ScavTrap(const ScavTrap&);
+	ScavTrap&	operator=(const ScavTrap&);
+	~ScavTrap();
+	void	guardGate();
+	virtual void	attack(const std::string& target);
+private:
 };
+

@@ -6,13 +6,13 @@
 #    By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/14 18:23:15 by mafortin          #+#    #+#              #
-#    Updated: 2022/04/20 14:49:18 by mafortin         ###   ########.fr        #
+#    Updated: 2022/04/25 12:11:09 by mafortin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	claptrap
 FLAGS	=	-Wall -Werror -Wextra -Wpedantic -Wconversion -std=c++98
-CC		=	clang++
+CC		=	c++
 RM		=	rm -rf
 
 OBJ		=	obj

@@ -6,7 +6,7 @@
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 11:58:05 by mafortin          #+#    #+#             */
-/*   Updated: 2022/04/25 11:58:09 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/04/25 14:48:39 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ ScavTrap::ScavTrap() : ClapTrap(){
 	std::cout << "ScravTrap " << this->name << " Default constructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap(name){
+ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name){
 	this->hp = 100;
 	this->ep = 50;
 	this->ad = 20;
@@ -44,6 +44,19 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& cpy){
 	this->ad = cpy.ad;
 	std::cout << "ScravTrap " << this->name << " copy assigment operator called" << std::endl;
 	return (*this);
+}
+
+void ScavTrap::attack(const std::string& target){
+	if(this->hp == 0)
+		std::cout << "ScavTrap " << this->name << " is dead. Can't attack !" << std::endl;
+	else if(this->ep == 0)
+		std::cout << "ScavTrap " << this->name << " has not enough energy to attack" << std::endl;
+	else
+	{ 
+		std::cout << "ScavTrap " << this->name << " attacks " << target <<
+		" causing " << this->ad << " points of damage!" << std::endl;
+		this->ep--;
+	}
 }
 
 void	ScavTrap::guardGate(){
