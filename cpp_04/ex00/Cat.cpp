@@ -6,7 +6,7 @@
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 17:18:12 by mafortin          #+#    #+#             */
-/*   Updated: 2022/04/25 18:33:32 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/04/27 14:10:56 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Cat::Cat(const Cat& other){
 }
 
 Cat& Cat::operator=(const Cat& rhs){
-	(void)rhs;
+	this->type = rhs.type;
 	std::cout << "Animal of type: " << this->type << " copy assignment operator called" << std::endl;
 	return *this;
 }
