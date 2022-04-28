@@ -6,7 +6,7 @@
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 12:12:18 by mafortin          #+#    #+#             */
-/*   Updated: 2022/04/25 15:16:19 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/04/28 12:53:04 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,18 @@ FragTrap& FragTrap::operator=(const FragTrap& cpy){
 }
 
 void	FragTrap::highFivesGuys(){
-	std::cout << "FrapTrap " << this->name << " is asking for a high fives ! Don't leave him hanging" << std::endl;
+	std::cout << "FragTrap " << this->name << " is asking for a high fives ! Don't leave him hanging" << std::endl;
+}
+
+void FragTrap::attack(const std::string& target){
+	if(this->hp == 0)
+		std::cout << "FragTrap " << this->name << " is dead. Can't attack !" << std::endl;
+	else if(this->ep == 0)
+		std::cout << "FragTrap " << this->name << " has not enough energy to attack" << std::endl;
+	else
+	{ 
+		std::cout << "FragTrap " << this->name << " attacks " << target <<
+		" causing " << this->ad << " points of damage!" << std::endl;
+		this->ep--;
+	}
 }

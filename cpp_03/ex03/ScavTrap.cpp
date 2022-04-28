@@ -6,7 +6,7 @@
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 11:58:05 by mafortin          #+#    #+#             */
-/*   Updated: 2022/04/25 14:48:39 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/04/28 12:53:50 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ ScavTrap::ScavTrap() : ClapTrap(){
 	this->ep = 50;
 	this->ad = 20;
 	this->name = "John Doe";
-	std::cout << "ScravTrap " << this->name << " Default constructor called" << std::endl;
+	std::cout << "ScavTrap " << this->name << " Default constructor called" << std::endl;
 }
 
 ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name){
@@ -26,7 +26,7 @@ ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name){
 	this->ep = 50;
 	this->ad = 20;
 	this->name = name;
-	std::cout << "ScravTrap " << this->name << " string constructor called" << std::endl;
+	std::cout << "ScavTrap " << this->name << " string constructor called" << std::endl;
 }
 
 ScavTrap::~ScavTrap(){
@@ -35,14 +35,14 @@ ScavTrap::~ScavTrap(){
 
 ScavTrap::ScavTrap(const ScavTrap& cpy){
 	*this = cpy;
-	std::cout << "ScravTrap " << this->name << " copy constructor called" << std::endl;
+	std::cout << "ScavTrap " << this->name << " copy constructor called" << std::endl;
 }
 
 ScavTrap& ScavTrap::operator=(const ScavTrap& cpy){
 	this->hp = cpy.hp;
 	this->ep = cpy.ep;
 	this->ad = cpy.ad;
-	std::cout << "ScravTrap " << this->name << " copy assigment operator called" << std::endl;
+	std::cout << "ScavTrap " << this->name << " copy assigment operator called" << std::endl;
 	return (*this);
 }
 

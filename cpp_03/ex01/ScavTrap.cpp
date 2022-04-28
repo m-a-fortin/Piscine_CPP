@@ -6,7 +6,7 @@
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 11:58:05 by mafortin          #+#    #+#             */
-/*   Updated: 2022/04/25 11:58:09 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/04/28 12:50:42 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ ScavTrap::ScavTrap() : ClapTrap(){
 	this->ep = 50;
 	this->ad = 20;
 	this->name = "John Doe";
-	std::cout << "ScravTrap " << this->name << " Default constructor called" << std::endl;
+	std::cout << "ScavTrap " << this->name << " Default constructor called" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name){
@@ -26,7 +26,7 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name){
 	this->ep = 50;
 	this->ad = 20;
 	this->name = name;
-	std::cout << "ScravTrap " << this->name << " string constructor called" << std::endl;
+	std::cout << "ScavTrap " << this->name << " string constructor called" << std::endl;
 }
 
 ScavTrap::~ScavTrap(){
@@ -35,7 +35,7 @@ ScavTrap::~ScavTrap(){
 
 ScavTrap::ScavTrap(const ScavTrap& cpy){
 	*this = cpy;
-	std::cout << "ScravTrap " << this->name << " copy constructor called" << std::endl;
+	std::cout << "ScavTrap " << this->name << " copy constructor called" << std::endl;
 }
 
 ScavTrap& ScavTrap::operator=(const ScavTrap& cpy){
@@ -48,4 +48,17 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& cpy){
 
 void	ScavTrap::guardGate(){
 	std::cout << this->name << " is now in Gate keeper mode" << std::endl;
+}
+
+void ScavTrap::attack(const std::string& target){
+	if(this->hp == 0)
+		std::cout << "ScavTrap " << this->name << " is dead. Can't attack !" << std::endl;
+	else if(this->ep == 0)
+		std::cout << "ScavTrap " << this->name << " has not enough energy to attack" << std::endl;
+	else
+	{ 
+		std::cout << "ScavTrap " << this->name << " attacks " << target <<
+		" causing " << this->ad << " points of damage!" << std::endl;
+		this->ep--;
+	}
 }
