@@ -6,14 +6,14 @@
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 17:09:42 by mafortin          #+#    #+#             */
-/*   Updated: 2022/04/25 18:33:20 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/04/29 12:37:41 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include <iostream>
 
-Animal::Animal() : type("Animal"){
+Animal::Animal() : type("No Type"){
 	std::cout << "Animal of type: " << this->type << " default constructor" << std::endl; 
 }
 

@@ -6,7 +6,7 @@
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 17:18:12 by mafortin          #+#    #+#             */
-/*   Updated: 2022/04/27 14:10:29 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/04/29 12:46:18 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Dog::Dog() : type("Dog"){
 	this->brain = new Brain;
 }
 
-Dog::Dog(const Dog& other){
+Dog::Dog(const Dog& other) : Animal(){
 	*this = other;
 	std::cout << "Animal of type: " << this->type << " copy constructor" << std::endl; 
 }

@@ -17,7 +17,7 @@ WrongCat::WrongCat() : type("WrongCat"){
 	std::cout << "Animal of type: " << this->type << " default constructor" << std::endl; 
 }
 
-WrongCat::WrongCat(const WrongCat& other){
+WrongCat::WrongCat(const WrongCat& other) : WrongAnimal(){
 	*this = other;
 	std::cout << "Animal of type: " << this->type << " copy constructor" << std::endl; 
 }
