@@ -6,12 +6,14 @@
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 15:10:35 by mafortin          #+#    #+#             */
-/*   Updated: 2022/04/29 15:15:56 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/04/30 12:07:54 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include "AMateria.hpp"
+
+class AMateria;
 
 class ICharacter
 {

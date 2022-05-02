@@ -6,18 +6,18 @@
 #    By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/14 18:23:15 by mafortin          #+#    #+#              #
-#    Updated: 2022/04/30 09:12:09 by mafortin         ###   ########.fr        #
+#    Updated: 2022/05/02 15:03:40 by mafortin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	abstract
+NAME	=	bureaucrat
 FLAGS	=	-Wall -Werror -Wextra -Wpedantic -Wconversion -Wshadow -std=c++98
 CC		=	c++
 RM		=	rm -rf
 
 OBJ		=	obj
 
-SRCS	=	main.cpp Cat.cpp AAnimal.cpp Dog.cpp WrongCat.cpp WrongAnimal.cpp Brain.cpp
+SRCS	=	
 OBJS	=	$(addprefix $(OBJ)/, $(SRCS:.cpp=.o))
 
 $(OBJ)/%.o:		%.cpp
@@ -39,7 +39,4 @@ fclean:		clean
 
 re:			fclean all
 
-format:
-			@clang-format -i $(SRCS)
-
-.PHONY:		all clean fclean re format
+.PHONY:		all clean fclean re

@@ -13,11 +13,11 @@
 #include "WrongCat.hpp"
 #include <iostream>
 
-WrongCat::WrongCat() : type("WrongCat"){
+WrongCat::WrongCat() : WrongAnimal("cat"){
 	std::cout << "Animal of type: " << this->type << " default constructor" << std::endl; 
 }
 
-WrongCat::WrongCat(const WrongCat& other){
+WrongCat::WrongCat(const WrongCat& other) : WrongAnimal("cat"){
 	*this = other;
 	std::cout << "Animal of type: " << this->type << " copy constructor" << std::endl; 
 }

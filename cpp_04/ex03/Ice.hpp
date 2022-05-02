@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/25 17:09:26 by mafortin          #+#    #+#             */
-/*   Updated: 2022/04/29 12:49:57 by mafortin         ###   ########.fr       */
+/*   Created: 2022/04/30 09:14:21 by mafortin          #+#    #+#             */
+/*   Updated: 2022/04/30 12:03:34 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <string>
+#include "AMateria.hpp"
 
-//ABSTRACT CLASS
-class Animal
-{
+class Ice : public AMateria
+{	
 public:
-	Animal();
-	Animal(const Animal&);
-	Animal& operator=(const Animal&);
-	virtual ~Animal();
-	virtual	void	makeSound() const = 0;
-	virtual std::string	getType() const = 0;
-	virtual void	giveIdea(char **argv) = 0;
-	virtual void	printIdea() const = 0;
-protected:
-	std::string type;
+	Ice();
+	Ice(const Ice&);
+	Ice& operator=(const Ice&);
+	virtual ~Ice();
+	Ice(const std::string& type);
+	virtual Ice* clone() const;
 };

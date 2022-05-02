@@ -6,19 +6,19 @@
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 17:18:12 by mafortin          #+#    #+#             */
-/*   Updated: 2022/04/27 14:10:29 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/04/30 10:27:07 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 #include <iostream>
 
-Dog::Dog() : type("Dog"){
-	std::cout << "Animal of type: " << this->type << " default constructor" << std::endl;
+Dog::Dog() : Animal("dog"){
+	std::cout << "Dog default constructor" << std::endl;
 	this->brain = new Brain;
 }
 
-Dog::Dog(const Dog& other){
+Dog::Dog(const Dog& other) : Animal("dog"){
 	*this = other;
 	std::cout << "Animal of type: " << this->type << " copy constructor" << std::endl; 
 }
@@ -26,13 +26,13 @@ Dog::Dog(const Dog& other){
 Dog& Dog::operator=(const Dog& rhs){
 	this->type = rhs.type;
 	this->brain = new Brain(*rhs.brain);
-	std::cout << "Animal of type: " << this->type << " copy assignment operator called" << std::endl;
+	std::cout << "Dog copy assignment operator called" << std::endl;
 	return *this;
 }
 
 Dog::~Dog(){
 	delete brain;
-	std::cout << "Animal of type: " << this->type << " destructor called." << std::endl;
+	std::cout << "Dog destructor called." << std::endl;
 }
 
 std::string	Dog::getType() const{

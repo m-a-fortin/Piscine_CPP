@@ -13,7 +13,7 @@
 #include "WrongAnimal.hpp"
 #include <iostream>
 
-WrongAnimal::WrongAnimal() : type("WrongAnimal"){
+WrongAnimal::WrongAnimal() : type("no type"){
 	std::cout << "Animal of type: " << this->type << " default constructor" << std::endl; 
 }
 
@@ -23,9 +23,11 @@ WrongAnimal::WrongAnimal(const WrongAnimal& other){
 }
 
 WrongAnimal& WrongAnimal::operator=(const WrongAnimal& rhs){
-	(void)rhs;
+	this->type = rhs.type;
 	std::cout << "Animal of type: " << this->type << " copy assignment operator called" << std::endl;
 	return *this;
+}
+WrongAnimal::WrongAnimal(const std::string& type) : type(type){
 }
 
 WrongAnimal::~WrongAnimal(){

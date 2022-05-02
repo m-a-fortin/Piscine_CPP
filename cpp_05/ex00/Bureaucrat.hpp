@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.hpp                                       :+:      :+:    :+:   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/25 17:17:10 by mafortin          #+#    #+#             */
-/*   Updated: 2022/04/30 10:12:12 by mafortin         ###   ########.fr       */
+/*   Created: 2022/05/02 15:05:25 by mafortin          #+#    #+#             */
+/*   Updated: 2022/05/02 15:18:25 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include "WrongAnimal.hpp"
+#include <string>
 
-class WrongCat : public WrongAnimal
+class Bureaucrat
 {
 public:
-	WrongCat();
-	WrongCat(const WrongCat&);
-	WrongCat& operator=(const WrongCat&);
-	virtual ~WrongCat();
-	void	makeSound() const;
-	std::string	getType() const;
+	Bureaucrat();
+	Bureaucrat(const Bureaucrat&);
+	Bureaucrat(const std::string& name, int grade);
+	Bureaucrat& operator=(const Bureaucrat&);
+	int	getGrade() const;
+	const std::string& getName() const;
+	void	incrementGrade(int amount);
+	void	decreaseGrade(int amount);
+private:
+	const	std::string& name;
+	int		grade;
 };

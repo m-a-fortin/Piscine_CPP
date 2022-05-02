@@ -6,7 +6,7 @@
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 17:17:10 by mafortin          #+#    #+#             */
-/*   Updated: 2022/04/25 18:33:57 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/04/30 09:50:56 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,4 @@ public:
 	virtual	~Dog();
 	void	makeSound() const;
 	virtual	std::string	getType() const;
-protected:
-	std::string type;
 };

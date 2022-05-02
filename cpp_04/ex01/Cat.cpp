@@ -6,7 +6,7 @@
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 17:18:12 by mafortin          #+#    #+#             */
-/*   Updated: 2022/04/27 14:10:12 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/04/30 10:46:19 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,26 @@
 #include <iostream>
 #include <string>
 
-Cat::Cat() : type("Cat"){
-	std::cout << "Animal of type: " << this->type << " default constructor" << std::endl;
-	this->brain = new Brain; 
+Cat::Cat() : Animal("cat"){
+	this->brain = new Brain;
+	std::cout << "Cat default constructor" << std::endl; 
 }
 
-Cat::Cat(const Cat& other){
+Cat::Cat(const Cat& other) : Animal("cat"){
 	*this = other;
-	std::cout << "Animal of type: " << this->type << " copy constructor" << std::endl; 
+	std::cout << "Cat copy constructor" << std::endl; 
 }
 
 Cat& Cat::operator=(const Cat& rhs){
 	this->type = rhs.type;
-	std::cout << "Animal of type: " << this->type << " copy assignment operator called" << std::endl;
+	std::cout << "Cat copy assignment operator called" << std::endl;
 	this->brain = new Brain(*rhs.brain);
 	return *this;
 }
 
 Cat::~Cat(){
 	delete brain;
-	std::cout << "Animal of type: " << this->type << " destructor called." << std::endl;
+	std::cout << "Cat destructor called." << std::endl;
 }
 
 std::string	Cat::getType() const{
@@ -41,11 +41,10 @@ std::string	Cat::getType() const{
 }
 
 void	Cat::giveIdea(char **argv){
-
 	int j = 0;
 	for (int i = 1; argv[i]; i++){
-		std::string current(argv[i]);
-		this->brain->ideas[j] = current;
+		std::cout << "TEST" << std::endl;
+		this->brain->ideas[j] = std::string(argv[i]);
 		j++;
 		if (!argv[i + 1])
 			this->brain->ideas[j] = "";

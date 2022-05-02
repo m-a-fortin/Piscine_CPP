@@ -1,50 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   AAnimal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 17:09:42 by mafortin          #+#    #+#             */
-/*   Updated: 2022/04/29 12:47:54 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/04/30 09:10:40 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include <iostream>
 
-Animal::Animal() : type("No Type"){
+AAnimal::AAnimal() : type("No Type"){
 	std::cout << "ABSTRACT animal default constructor" << std::endl; 
 }
 
-Animal::Animal(const Animal& other){
+AAnimal::AAnimal(const AAnimal& other){
 	*this = other;
 	std::cout << "ABSTRACT animal copy constructor" << std::endl; 
 }
 
-Animal& Animal::operator=(const Animal& rhs){
+AAnimal& AAnimal::operator=(const AAnimal& rhs){
 	(void)rhs;
 	std::cout << "ABSTRACT animal copy assignment operator called" << std::endl;
 	return *this;
 }
 
-Animal::~Animal(){
+AAnimal::AAnimal(std::string type) : type(type){
+}
+
+AAnimal::~AAnimal(){
 	std::cout << "ABSTRACT animal destructor called." << std::endl;
-}
-
-std::string	Animal::getType() const{
-	return this->type;
-}
-
-void	Animal::makeSound() const{
-	std::cout << "The animal of type " << this->type << " makes the sound:\nComplete silence." << std::endl;
-}
-
-void	Animal::giveIdea(char **argv){
-	(void)argv;
-	std::cout << "I cant have my own ideas because i'm just an Animal" << std::endl;
-}
-
-void	Animal::printIdea() const{
-	std::cout << "I have no idea because i'm just an Animal" << std::endl;
 }

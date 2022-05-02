@@ -6,11 +6,11 @@
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 17:32:37 by mafortin          #+#    #+#             */
-/*   Updated: 2022/04/27 14:42:02 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/04/30 09:12:59 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
 #include "WrongAnimal.hpp"
@@ -20,7 +20,7 @@
 int	main(void){
 	Cat cat;
 	Dog dog;
-	//Animal animal;
+	//AAnimal animal;
 
 	dog.makeSound();
 	std::cout << dog.getType() << std::endl;

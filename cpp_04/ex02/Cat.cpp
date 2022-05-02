@@ -6,7 +6,7 @@
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 17:18:12 by mafortin          #+#    #+#             */
-/*   Updated: 2022/04/29 12:46:07 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/04/30 10:48:49 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,11 @@
 #include <iostream>
 #include <string>
 
-Cat::Cat() : type("Cat"){
-	std::cout << "Animal of type: " << this->type << " default constructor" << std::endl;
-	this->brain = new Brain; 
+Cat::Cat() : AAnimal("cat"){
+	std::cout << "Cat default constructor" << std::endl; 
 }
 
-Cat::Cat(const Cat& other) : Animal(){
+Cat::Cat(const Cat& other) : AAnimal("cat"){
 	*this = other;
 	std::cout << "Animal of type: " << this->type << " copy constructor" << std::endl; 
 }
@@ -33,7 +32,7 @@ Cat& Cat::operator=(const Cat& rhs){
 
 Cat::~Cat(){
 	delete brain;
-	std::cout << "Animal of type: " << this->type << " destructor called." << std::endl;
+	std::cout << "Cat destructor called." << std::endl;
 }
 
 std::string	Cat::getType() const{

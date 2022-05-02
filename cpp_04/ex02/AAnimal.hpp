@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.hpp                                       :+:      :+:    :+:   */
+/*   AAnimal.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/25 17:17:10 by mafortin          #+#    #+#             */
-/*   Updated: 2022/04/30 10:12:12 by mafortin         ###   ########.fr       */
+/*   Created: 2022/04/25 17:09:26 by mafortin          #+#    #+#             */
+/*   Updated: 2022/04/30 09:53:24 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include "WrongAnimal.hpp"
+#include <string>
 
-class WrongCat : public WrongAnimal
+//ABSTRACT CLASS
+class AAnimal
 {
 public:
-	WrongCat();
-	WrongCat(const WrongCat&);
-	WrongCat& operator=(const WrongCat&);
-	virtual ~WrongCat();
-	void	makeSound() const;
-	std::string	getType() const;
+	AAnimal();
+	AAnimal(const AAnimal&);
+	AAnimal& operator=(const AAnimal&);
+	AAnimal(std::string type);
+	virtual ~AAnimal();
+	virtual	void	makeSound() const = 0;
+	virtual std::string	getType() const = 0;
+	virtual void	giveIdea(char **argv) = 0;
+	virtual void	printIdea() const = 0;
+protected:
+	std::string type;
 };
