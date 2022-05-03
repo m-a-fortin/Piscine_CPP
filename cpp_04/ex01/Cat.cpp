@@ -6,7 +6,7 @@
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 17:18:12 by mafortin          #+#    #+#             */
-/*   Updated: 2022/04/30 10:46:19 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/05/03 14:46:41 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ std::string	Cat::getType() const{
 void	Cat::giveIdea(char **argv){
 	int j = 0;
 	for (int i = 1; argv[i]; i++){
-		std::cout << "TEST" << std::endl;
 		this->brain->ideas[j] = std::string(argv[i]);
 		j++;
 		if (!argv[i + 1])

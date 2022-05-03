@@ -34,3 +34,7 @@ AAnimal::AAnimal(std::string type) : type(type){
 AAnimal::~AAnimal(){
 	std::cout << "ABSTRACT animal destructor called." << std::endl;
 }
+
+std::string	AAnimal::getType() const{
+	return this->type;
+}

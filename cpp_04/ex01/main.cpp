@@ -6,7 +6,7 @@
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 17:32:37 by mafortin          #+#    #+#             */
-/*   Updated: 2022/04/30 10:44:56 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/05/03 14:53:07 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,4 +58,16 @@ int	main(int argc, char **argv){
 	for (int i = 9; i >= 0; i--){
 		delete animals[i];
 	}
+	std::cout << "\nOUT OF SCOPE TESTING" << std::endl;
+	Dog basic;
+	std::cout << '\n';
+	basic.giveIdea(argv);
+	{
+		Dog temp = basic;
+	}
+	basic.printIdea();
+	{
+		Dog temp(basic);
+	}
+	basic.printIdea();
 }

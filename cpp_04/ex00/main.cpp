@@ -6,7 +6,7 @@
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 17:32:37 by mafortin          #+#    #+#             */
-/*   Updated: 2022/04/27 10:53:51 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/05/03 14:36:10 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ int	main(void){
 	Animal	*test = new Cat;
 	cat.makeSound();
 	test->makeSound();
-
 	delete test;
+
 	std::cout << "\n___________\n" << " DOG TEST " << std::endl;
 	test = new Dog;
 	dog.makeSound();

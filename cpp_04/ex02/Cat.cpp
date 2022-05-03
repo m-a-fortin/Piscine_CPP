@@ -6,7 +6,7 @@
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 17:18:12 by mafortin          #+#    #+#             */
-/*   Updated: 2022/04/30 10:48:49 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/05/03 14:59:16 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 #include <string>
 
 Cat::Cat() : AAnimal("cat"){
-	std::cout << "Cat default constructor" << std::endl; 
+	std::cout << "Cat default constructor" << std::endl;
+	this->brain = new Brain;
 }
 
 Cat::Cat(const Cat& other) : AAnimal("cat"){
@@ -25,8 +26,8 @@ Cat::Cat(const Cat& other) : AAnimal("cat"){
 
 Cat& Cat::operator=(const Cat& rhs){
 	this->type = rhs.type;
-	std::cout << "Animal of type: " << this->type << " copy assignment operator called" << std::endl;
 	this->brain = new Brain(*rhs.brain);
+	std::cout << "Animal of type: " << this->type << " copy assignment operator called" << std::endl;
 	return *this;
 }
 
