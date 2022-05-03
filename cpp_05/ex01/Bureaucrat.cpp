@@ -6,7 +6,7 @@
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 15:06:21 by mafortin          #+#    #+#             */
-/*   Updated: 2022/05/03 16:36:36 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/05/03 12:50:07 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ const char* Bureaucrat::GradeTooHighException::what() const throw(){
 				return ("Grade cannot be higher than 1. Grade set to max value");
 }
 
-void Bureaucrat::verifyGrade() const{
+void Bureaucrat::verifyGrade(){
 	if (this->grade > 150){
 		this->grade = 150;
 		throw GradeTooLowException();

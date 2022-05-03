@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/02 15:05:25 by mafortin          #+#    #+#             */
-/*   Updated: 2022/05/03 16:36:51 by mafortin         ###   ########.fr       */
+/*   Created: 2022/05/03 15:53:12 by mafortin          #+#    #+#             */
+/*   Updated: 2022/05/03 16:49:57 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <string>
-#include <stdexcept>
 
-class Bureaucrat
+class Form
 {
 public:
-	Bureaucrat();
-	Bureaucrat(const Bureaucrat&);
-	Bureaucrat(const std::string& name, int grade);
-	Bureaucrat& operator=(const Bureaucrat&);
-	int	getGrade() const;
-	const std::string& getName() const;
-	void	incrementGrade(int amount);
-	void	decreaseGrade(int amount);
+	Form();
+	Form(const Form&);
+	Form& operator=(const Form&);
+	~Form();
+	Form(const std::string& name, const int& sign, const int& exec);
 	class GradeTooHighException : public std::exception
 	{
 		public:
@@ -35,10 +31,17 @@ public:
 		public:
 			virtual const char* what() const throw();
 	};
+	std::string	getName() const;
+	int	getSignReq() const;
+	int	getExecReq() const;
+	bool	getSignature() const;
 private:
-	std::string name;
-	int		grade;
-	void	verifyGrade();
+	std::string	name;
+	bool		signature;
+	const	int	signReq;
+	const	int	execReq;
+	void	verifySignReq() const;
+	void	verifyExecReq() const;
 };
 
-std::ostream& operator<<(std::ostream& stream, const Bureaucrat&);
+std::ostream& operator<<(std::ostream& stream, const Form& out);
