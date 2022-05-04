@@ -6,7 +6,7 @@
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 17:18:12 by mafortin          #+#    #+#             */
-/*   Updated: 2022/04/30 10:03:42 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/05/04 13:32:24 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,20 @@ Dog::Dog() : AAnimal("dog"){
 }
 
 Dog::Dog(const Dog& other) : AAnimal("dog"){
-	*this = other;
+	this->type = other.type;
+	this->brain = new Brain(*other.brain);
 	std::cout << "Dog copy constructor" << std::endl; 
 }
 
 Dog& Dog::operator=(const Dog& rhs){
-	this->type = rhs.type;
-	this->brain = new Brain(*rhs.brain);
-	std::cout << "Dog copy assignment operator called" << std::endl;
+	
+	if (this != &rhs)
+	{
+		delete this->brain;
+		this->type = rhs.type;
+		this->brain = new Brain(*rhs.brain);
+		std::cout << "Dog copy assignment operator called" << std::endl;
+	}
 	return *this;
 }
 
@@ -45,6 +51,11 @@ void	Dog::giveIdea(char **argv){
 		std::string current(argv[i]);
 		this->brain->ideas[j] = current;
 		j++;
+		if (j == 99)
+		{
+			this->brain->ideas[j] = "";
+			break ;
+		}
 		if (!argv[i + 1])
 			this->brain->ideas[j] = "";
 	}

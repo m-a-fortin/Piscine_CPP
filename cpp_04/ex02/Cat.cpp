@@ -6,7 +6,7 @@
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 17:18:12 by mafortin          #+#    #+#             */
-/*   Updated: 2022/05/03 14:59:16 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/05/04 13:32:14 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,19 @@ Cat::Cat() : AAnimal("cat"){
 }
 
 Cat::Cat(const Cat& other) : AAnimal("cat"){
-	*this = other;
-	std::cout << "Animal of type: " << this->type << " copy constructor" << std::endl; 
+	this->type = other.type;
+	this->brain = new Brain(*other.brain);
+	std::cout << "Cat copy constructor" << std::endl; 
 }
 
 Cat& Cat::operator=(const Cat& rhs){
-	this->type = rhs.type;
-	this->brain = new Brain(*rhs.brain);
-	std::cout << "Animal of type: " << this->type << " copy assignment operator called" << std::endl;
+	if (this != &rhs)
+	{
+		delete this->brain;
+		this->type = rhs.type;
+		this->brain = new Brain(*rhs.brain);
+		std::cout << "Cat copy assignment operator called" << std::endl;
+	}
 	return *this;
 }
 
@@ -47,6 +52,11 @@ void	Cat::giveIdea(char **argv){
 		std::string current(argv[i]);
 		this->brain->ideas[j] = current;
 		j++;
+		if (j == 99)
+		{
+			this->brain->ideas[j] = "";
+			break ;
+		}
 		if (!argv[i + 1])
 			this->brain->ideas[j] = "";
 	}

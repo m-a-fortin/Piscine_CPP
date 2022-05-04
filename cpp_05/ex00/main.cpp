@@ -6,7 +6,7 @@
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 12:09:39 by mafortin          #+#    #+#             */
-/*   Updated: 2022/05/03 12:48:48 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/05/04 15:45:05 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	main(void){
 	std::cout << c << std::endl;
 	std::cout << d << std::endl;
 	try{
-		c.incrementGrade(1);
+		c.increaseGrade(1);
 	}
 	catch(std::exception& e){
 		std::cout << e.what() << std::endl;
@@ -67,7 +67,7 @@ int	main(void){
 	Bureaucrat g("test3", 5);
 	Bureaucrat h("test4", 145);
 	try{
-		g.incrementGrade(3);
+		g.increaseGrade(3);
 	}
 	catch(std::exception& e){
 		std::cout << e.what() << std::endl;

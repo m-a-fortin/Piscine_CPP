@@ -6,7 +6,7 @@
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 15:05:25 by mafortin          #+#    #+#             */
-/*   Updated: 2022/05/03 16:36:51 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/05/04 15:44:57 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ public:
 	Bureaucrat& operator=(const Bureaucrat&);
 	int	getGrade() const;
 	const std::string& getName() const;
-	void	incrementGrade(int amount);
+	void	increaseGrade(int amount);
 	void	decreaseGrade(int amount);
 	class GradeTooHighException : public std::exception
 	{
