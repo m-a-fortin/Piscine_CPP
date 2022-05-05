@@ -6,7 +6,7 @@
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 15:53:45 by mafortin          #+#    #+#             */
-/*   Updated: 2022/05/04 15:40:30 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/05/05 16:51:18 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,10 @@ std::string Form::getName() const{
 	return this->name;
 }
 
+void	Form::setName(const std::string& cpy){
+	this->target = cpy;
+}
+
 int	Form::getSignReq() const{
 	return this->signReq;
 }
@@ -49,20 +53,29 @@ int	Form::getExecReq() const{
 bool	Form::getSignature() const{
 	return this->signature;
 }
+
+std::string	Form::getTarget() const {
+	return this->target;
+}
+
+void	Form::setTarget(const std::string& cpy){
+	this->target = cpy;
+}
+
 void	Form::verifySignReq() const{
-	if (this->signReq > 150){
+	if (getSignReq() > 150){
 		throw GradeTooLowException();
 	}
-	if (this->signReq < 1){
+	if (getSignReq() < 1){
 		throw GradeTooHighException();
 	}
 }
 
 void	Form::verifyExecReq() const{
-	if (this->execReq > 150){
+	if (getExecReq() > 150){
 		throw GradeTooLowException();
 	}
-	if (this->execReq < 1){
+	if (getExecReq() < 1){
 		throw GradeTooHighException();
 	}
 }
@@ -75,6 +88,10 @@ const char* Form::GradeTooHighException::what() const throw(){
 				return ("Grade is too high");
 }
 
+const char* Form::NotSignedException::what() const throw(){
+				return ("Form not signed");
+}
+
 void	Form::beSigned(const Bureaucrat& b){
 	int	b_grade = b.getGrade();
 	
@@ -85,8 +102,19 @@ void	Form::beSigned(const Bureaucrat& b){
 		this->signature = true;
 }
 
+void	Form::checkExecution(Bureaucrat const & executor) const{
+	if (executor.getGrade() > getExecReq())
+		throw GradeTooLowException();
+	else if (getSignature() == false)
+		throw NotSignedException();
+}
+
+void	Form::execute(Bureaucrat const & executor) const{
+	std::cout << executor.getName() << "Execute nothing" << std :: endl;
+}
+
 std::ostream& operator<<(std::ostream& stream, const Form& out){
-	stream << out.getName() << ", form grade required to sign : " << out.getSignReq() 
-	<< "\n" << out.getName() <<  ", form grade required to execute : " << out.getExecReq();
+	stream << out.getName() << ", Form grade required to sign : " << out.getSignReq() 
+	<< "\n" << out.getName() <<  ", Form grade required to execute : " << out.getExecReq();
 	return stream;
 }

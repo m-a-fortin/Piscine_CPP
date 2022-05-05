@@ -6,18 +6,18 @@
 #    By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/14 18:23:15 by mafortin          #+#    #+#              #
-#    Updated: 2022/05/05 15:48:37 by mafortin         ###   ########.fr        #
+#    Updated: 2022/05/05 16:51:26 by mafortin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	ex00
+NAME	=	ex03
 FLAGS	=	-Wall -Werror -Wextra -Wpedantic -Wconversion -Wshadow -std=c++98
 CC		=	c++
 RM		=	rm -rf
 
 OBJ		=	obj
 
-SRCS	=	Bureaucrat.cpp main.cpp
+SRCS	=	Bureaucrat.cpp main.cpp Form.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp
 OBJS	=	$(addprefix $(OBJ)/, $(SRCS:.cpp=.o))
 
 $(OBJ)/%.o:		%.cpp

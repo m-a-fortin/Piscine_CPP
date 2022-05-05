@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 15:53:12 by mafortin          #+#    #+#             */
-/*   Updated: 2022/05/04 15:40:20 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/05/05 16:47:32 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
+
 #include <string>
 #include "Bureaucrat.hpp"
 
 class Bureaucrat;
 
-class Form
+class AForm
 {
 public:
-	Form();
-	Form(const Form&);
-	Form& operator=(const Form&);
-	~Form();
-	Form(const std::string& name, const int& sign, const int& exec);
+	AForm();
+	AForm(const AForm&);
+	AForm& operator=(const AForm&);
+	virtual ~AForm();
+	AForm(const std::string& name, const int& sign, const int& exec);
 	class GradeTooHighException : public std::exception
 	{
 		public:
@@ -34,18 +35,29 @@ public:
 		public:
 			virtual const char* what() const throw();
 	};
+	class NotSignedException : public std::exception
+	{
+		public:
+			virtual const char* what() const throw();
+	};
 	std::string	getName() const;
-	int	getSignReq() const;
-	int	getExecReq() const;
+	void		setName(const std::string& cpy);
+	int		getSignReq() const;
+	int		getExecReq() const;
 	bool	getSignature() const;
+	std::string	getTarget() const;
+	void		setTarget(const std::string& cpy);
 	void	beSigned(const Bureaucrat& b);
+	void	verifySignReq() const;
+	void	verifyExecReq() const;
+	void	checkExecution(Bureaucrat const & executor) const;
+	virtual void	execute(Bureaucrat const & executor) const = 0;
 private:
 	std::string	name;
 	bool		signature;
 	const	int	signReq;
 	const	int	execReq;
-	void	verifySignReq() const;
-	void	verifyExecReq() const;
+	std::string target;
 };
 
-std::ostream& operator<<(std::ostream& stream, const Form& out);
+std::ostream& operator<<(std::ostream& stream, const AForm& out);

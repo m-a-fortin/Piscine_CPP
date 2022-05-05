@@ -6,7 +6,7 @@
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 15:06:21 by mafortin          #+#    #+#             */
-/*   Updated: 2022/05/05 14:59:36 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/05/05 16:52:44 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	Bureaucrat::decreaseGrade(int amount){
 	verifyGrade();
 }
 
-void	Bureaucrat::signForm(AForm& f) const{
+void	Bureaucrat::signForm(Form& f) const{
 	try{
 		f.beSigned(*this);
 		std::cout << this->name << " sign " << f.getName() << std::endl;
@@ -83,7 +83,7 @@ void Bureaucrat::verifyGrade(){
 	}
 }
 
-void	Bureaucrat::executeForm(AForm const & form) {
+void	Bureaucrat::executeForm(Form const & form) {
 	try{
 		form.execute(*this);
 		std::cout << this->name << " execute " << form.getName() << std::endl;
