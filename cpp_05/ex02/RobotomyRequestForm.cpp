@@ -12,6 +12,7 @@
 
 #include "RobotomyRequestForm.hpp"
 #include <iostream>
+#include <cstdlib>
 
 RobotomyRequestForm::RobotomyRequestForm() : AForm("Robotomy", 72, 45){
 	setTarget("Default");
@@ -34,11 +35,10 @@ RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("Robotomy",
 }
 
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const{
-
 	checkExecution(executor);
-	if (rand() % 2 != 0)
+	std::srand((unsigned int)time(NULL));
+	if (std::rand() % 2 != 0)
 		std::cout << getTarget() << " has been Robotomized" << std::endl;
 	else
-		std::cout << "Robotomy on " << getTarget() << "Failed" << std::endl;
-
+		std::cout << "Robotomy on " << getTarget() << " Failed" << std::endl;
 }
