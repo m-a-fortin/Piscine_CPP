@@ -13,7 +13,7 @@
 #include "PresidentialPardonForm.hpp"
 #include <iostream>
 
-PresidentialPardonForm::PresidentialPardonForm() : AForm("Robotomy", 25, 5){
+PresidentialPardonForm::PresidentialPardonForm() : AForm("President", 25, 5){
 	setTarget("Default");
 }
 
@@ -29,7 +29,7 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPard
 
 PresidentialPardonForm::~PresidentialPardonForm(){}
 
-PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("Robotomy", 25, 5){
+PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("President", 25, 5){
 	setTarget(target);
 }
 

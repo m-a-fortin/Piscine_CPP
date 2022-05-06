@@ -6,7 +6,7 @@
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 12:09:39 by mafortin          #+#    #+#             */
-/*   Updated: 2022/05/05 16:52:22 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/05/06 10:08:16 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,7 @@ int	main(void){
 	{
 		Form *test =  me.makeForm("robotomy request", "evaluateur");
 		b.signForm(*test);
-		for (int i = 0; i < 5; i++){
-			test->execute(b);
-		}
+		test->execute(b);
 		delete test;
 	}
 	std::cout << "TESTING SHRUBBERY" << std::endl;

@@ -6,7 +6,7 @@
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 12:09:39 by mafortin          #+#    #+#             */
-/*   Updated: 2022/05/05 15:29:34 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/05/06 10:03:21 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,7 @@ int	main(void){
 	std::cout << "GOOD GRADE " << std::endl;
 	executor.executeForm(roboto);
 	executor.signForm(roboto);
-	std::cout << "ROBOTO EXECUTION LOOP (50%)" << std::endl;
-	for (int i = 0; i < 5; i++)
-		executor.executeForm(roboto);
+	executor.executeForm(roboto);
 	}
 	std::cout << "PRESIDENT TESTING\n\n" << std::flush;
 	{
