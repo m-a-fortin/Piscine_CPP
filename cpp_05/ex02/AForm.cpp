@@ -21,15 +21,13 @@ AForm::AForm(const AForm& other) : signReq(other.signReq), execReq(other.execReq
 
 AForm& AForm::operator=(const AForm& rhs){
 	if (this != &rhs){
-	this->name = rhs.name;
 	this->signature = rhs.signature;
 	}
 	return *this;
 }
 
 AForm::AForm(const std::string& name, const int& signReq, const int& execReq) : name(name), signature(false), signReq(signReq), execReq(execReq){
-	verifySignReq();
-	verifyExecReq();
+	verifyReq();
 }
 
 AForm::~AForm(){}
@@ -62,20 +60,11 @@ void	AForm::setTarget(const std::string& cpy){
 	this->target = cpy;
 }
 
-void	AForm::verifySignReq() const{
-	if (getSignReq() > 150){
+void	AForm::verifyReq() const{
+	if (this->execReq > 150 || this->signReq > 150){
 		throw GradeTooLowException();
 	}
-	if (getSignReq() < 1){
-		throw GradeTooHighException();
-	}
-}
-
-void	AForm::verifyExecReq() const{
-	if (getExecReq() > 150){
-		throw GradeTooLowException();
-	}
-	if (getExecReq() < 1){
+	if (this->execReq < 1 || this->signReq < 1){
 		throw GradeTooHighException();
 	}
 }

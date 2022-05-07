@@ -6,7 +6,7 @@
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 12:09:39 by mafortin          #+#    #+#             */
-/*   Updated: 2022/05/04 15:44:15 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/05/07 11:30:45 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	main(void){
 	catch (std::exception& e){
 		std::cout << e.what() << std::endl;
 	}
-
+	
 	std::cout << "\n\n";
 	std::cout << "Form with good value" << std::endl;
 	Form test("A-101", 50, 50);

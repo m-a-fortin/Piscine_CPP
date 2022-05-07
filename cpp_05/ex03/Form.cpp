@@ -6,7 +6,7 @@
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 15:53:45 by mafortin          #+#    #+#             */
-/*   Updated: 2022/05/05 16:51:18 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/05/07 11:29:30 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,13 @@ Form::Form(const Form& other) : signReq(other.signReq), execReq(other.execReq){
 
 Form& Form::operator=(const Form& rhs){
 	if (this != &rhs){
-	this->name = rhs.name;
 	this->signature = rhs.signature;
 	}
 	return *this;
 }
 
 Form::Form(const std::string& name, const int& signReq, const int& execReq) : name(name), signature(false), signReq(signReq), execReq(execReq){
-	verifySignReq();
-	verifyExecReq();
+	verifyReq();
 }
 
 Form::~Form(){}
@@ -62,20 +60,11 @@ void	Form::setTarget(const std::string& cpy){
 	this->target = cpy;
 }
 
-void	Form::verifySignReq() const{
-	if (getSignReq() > 150){
+void	Form::verifyReq() const{
+	if (this->execReq > 150 || this->signReq > 150){
 		throw GradeTooLowException();
 	}
-	if (getSignReq() < 1){
-		throw GradeTooHighException();
-	}
-}
-
-void	Form::verifyExecReq() const{
-	if (getExecReq() > 150){
-		throw GradeTooLowException();
-	}
-	if (getExecReq() < 1){
+	if (this->execReq < 1 || this->signReq < 1){
 		throw GradeTooHighException();
 	}
 }

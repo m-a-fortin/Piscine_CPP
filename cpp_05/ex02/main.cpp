@@ -6,7 +6,7 @@
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 12:09:39 by mafortin          #+#    #+#             */
-/*   Updated: 2022/05/06 10:03:21 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/05/07 11:37:55 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	main(void){
 	executor.signForm(tree);
 	executor.executeForm(tree);
 	}
-	std::cout << "ROBOTOMY TESTING\n\n" << std::flush;
+	std::cout << "\nROBOTOMY TESTING\n\n" << std::flush;
 	{
 	Bureaucrat executor("Bob", 55);
 	RobotomyRequestForm roboto("Evaluateur"); //72 to sign, 45 to exec
@@ -45,7 +45,7 @@ int	main(void){
 	executor.signForm(roboto);
 	executor.executeForm(roboto);
 	}
-	std::cout << "PRESIDENT TESTING\n\n" << std::flush;
+	std::cout << "\nPRESIDENT TESTING\n\n" << std::flush;
 	{
 	Bureaucrat executor("Bob", 15);
 	PresidentialPardonForm president("Evaluateur"); //25 to sign, 5 to exec

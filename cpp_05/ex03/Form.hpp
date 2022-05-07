@@ -48,12 +48,11 @@ public:
 	std::string	getTarget() const;
 	void		setTarget(const std::string& cpy);
 	void	beSigned(const Bureaucrat& b);
-	void	verifySignReq() const;
-	void	verifyExecReq() const;
+	void	verifyReq() const;
 	void	checkExecution(Bureaucrat const & executor) const;
 	virtual void	execute(Bureaucrat const & executor) const;
 private:
-	std::string	name;
+	const std::string	name;
 	bool		signature;
 	const	int	signReq;
 	const	int	execReq;

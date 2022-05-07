@@ -6,7 +6,7 @@
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 15:53:12 by mafortin          #+#    #+#             */
-/*   Updated: 2022/05/04 15:40:20 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/05/07 11:23:55 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,11 @@ public:
 	bool	getSignature() const;
 	void	beSigned(const Bureaucrat& b);
 private:
-	std::string	name;
+	const std::string	name;
 	bool		signature;
 	const	int	signReq;
 	const	int	execReq;
-	void	verifySignReq() const;
-	void	verifyExecReq() const;
+	void	verifyReq() const;
 };
 
 std::ostream& operator<<(std::ostream& stream, const Form& out);

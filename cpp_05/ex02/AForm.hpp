@@ -6,7 +6,7 @@
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 15:53:12 by mafortin          #+#    #+#             */
-/*   Updated: 2022/05/05 16:47:32 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/05/07 11:36:57 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,12 +48,11 @@ public:
 	std::string	getTarget() const;
 	void		setTarget(const std::string& cpy);
 	void	beSigned(const Bureaucrat& b);
-	void	verifySignReq() const;
-	void	verifyExecReq() const;
+	void	verifyReq() const;
 	void	checkExecution(Bureaucrat const & executor) const;
 	virtual void	execute(Bureaucrat const & executor) const = 0;
 private:
-	std::string	name;
+	const std::string	name;
 	bool		signature;
 	const	int	signReq;
 	const	int	execReq;

@@ -6,7 +6,7 @@
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 15:05:25 by mafortin          #+#    #+#             */
-/*   Updated: 2022/05/05 14:45:45 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/05/07 11:14:33 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ public:
 			virtual const char* what() const throw();
 	};
 private:
-	std::string name;
+	const std::string name;
 	int		grade;
 	void	verifyGrade();
 };

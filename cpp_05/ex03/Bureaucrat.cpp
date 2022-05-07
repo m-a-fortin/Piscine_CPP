@@ -6,15 +6,14 @@
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 15:06:21 by mafortin          #+#    #+#             */
-/*   Updated: 2022/05/05 16:52:44 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/05/07 11:15:28 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include <iostream>
 
-Bureaucrat::Bureaucrat(){
-	this->name = "John Doe";
+Bureaucrat::Bureaucrat() : name("John Doe"){
 	this->grade = 42;
 }
 
@@ -28,7 +27,6 @@ Bureaucrat::Bureaucrat(const std::string& name, int grade) : name(name), grade(g
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& rhs){
 	if(this != &rhs){
-	this->name = rhs.name;
 	this->grade = rhs.grade;
 	}
 	return *this;

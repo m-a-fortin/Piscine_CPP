@@ -6,7 +6,7 @@
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 12:09:39 by mafortin          #+#    #+#             */
-/*   Updated: 2022/05/06 10:08:16 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/05/07 11:43:55 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,6 @@ int	main(void){
 	Intern me;
 	Bureaucrat b("Bob", 1);
 	me.makeForm("test", "evaluateur");
-	me.makeForm("presidential request", "evaluateur");
-	me.makeForm("shrubbery request", "evaluateur");
 	std::cout << "TESTING ROBOTOMY" << std::endl;
 	{
 		Form *test =  me.makeForm("robotomy request", "evaluateur");

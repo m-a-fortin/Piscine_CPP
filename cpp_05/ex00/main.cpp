@@ -6,7 +6,7 @@
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 12:09:39 by mafortin          #+#    #+#             */
-/*   Updated: 2022/05/04 15:45:05 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/05/07 11:18:37 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	main(void){
 	catch(std::exception& e){
 		std::cout << e.what() << std::endl;
 	}
-
+	
 	std::cout << "\nTEST 2:\n" << "Grade increase or decrease higher or lower than min/max value\n" << std::endl;
 	Bureaucrat c("Test1" , 1);
 	Bureaucrat d("Test2", 150);
