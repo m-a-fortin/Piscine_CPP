@@ -6,7 +6,7 @@
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 12:26:10 by mafortin          #+#    #+#             */
-/*   Updated: 2022/05/07 14:41:20 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/05/07 14:55:50 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -238,4 +238,3 @@ void	Converter::showConversion() const{
 	}
 		}
 }
-

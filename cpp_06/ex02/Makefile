@@ -6,18 +6,18 @@
 #    By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/14 18:23:15 by mafortin          #+#    #+#              #
-#    Updated: 2022/05/09 09:56:04 by mafortin         ###   ########.fr        #
+#    Updated: 2022/05/09 13:31:37 by mafortin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	ex00
+NAME	=	ex02
 FLAGS	=	-Wall -Werror -Wextra -Wpedantic -Wconversion -std=c++98
 CC		=	c++
 RM		=	rm -rf
 
 OBJ		=	obj
 
-SRCS	=	main.cpp Converter.cpp
+SRCS	=	main.cpp Base.cpp
 OBJS	=	$(addprefix $(OBJ)/, $(SRCS:.cpp=.o))
 
 $(OBJ)/%.o:		%.cpp
