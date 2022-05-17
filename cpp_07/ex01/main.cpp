@@ -6,7 +6,7 @@
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 13:23:52 by mafortin          #+#    #+#             */
-/*   Updated: 2022/05/10 14:07:26 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/05/17 15:21:24 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@ int	main(void){
 	std::cout << "INCREASING BY 1 EACH ELEMENT OF ARRAY OF INT\n";
 	::iter(tab2, 10, funct_add);
 	std::cout << "PRINTING RESULT\n";
-	::iter(tab2, 10, funct_print);
+	iter(tab2, 10, funct_print);
 }

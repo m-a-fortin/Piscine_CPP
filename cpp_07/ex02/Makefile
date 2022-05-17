@@ -6,12 +6,12 @@
 #    By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/14 18:23:15 by mafortin          #+#    #+#              #
-#    Updated: 2022/05/10 16:37:19 by mafortin         ###   ########.fr        #
+#    Updated: 2022/05/17 15:49:29 by mafortin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	ex02
-FLAGS	=	-Wall -Werror -Wextra -Wpedantic -Wconversion -std=c++98
+FLAGS	=	-Wall -Werror -Wextra -Wpedantic -std=c++98
 CC		=	c++
 RM		=	rm -rf
 

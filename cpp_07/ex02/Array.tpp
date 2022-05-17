@@ -6,7 +6,7 @@
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 16:04:02 by mafortin          #+#    #+#             */
-/*   Updated: 2022/05/10 17:16:31 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/05/17 15:52:46 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,8 @@ public:
 				return "Error\nIndex is out of bounce";
 			};
 	};
-	T	operator[](std::size_t index){
-		if (index >= this->_size)
+	T&	operator[](int index){
+		if (index >= static_cast<int>(this->_size) || index < 0)
 			throw OutOfBounce();
 		else
 			return this->_array[index];

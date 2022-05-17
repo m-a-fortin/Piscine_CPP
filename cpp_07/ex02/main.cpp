@@ -6,13 +6,14 @@
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 16:01:11 by mafortin          #+#    #+#             */
-/*   Updated: 2022/05/10 17:26:13 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/05/17 15:55:21 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Array.tpp"
 
+#define MAX_VAL 750
 int	main( void ){
 
 	Array<std::string>	test(10);
@@ -33,11 +34,10 @@ int	main( void ){
 
 	std::cout << "TESTING WITH INT VALUE\n";
 	Array<int> test3(5);
-	test3.setValue(0, 0);
-	test3.setValue(1, 1);
-	test3.setValue(2, 2);
-	test3.setValue(3, 3);
-	test3.setValue(4, 4);
+	test3[0] = 0;
+	test3[1] = 1;
+	test3[3] = 3;
+	test3[4] = 4;
 	std::cout << "SETTING VALUE 0,1,2,3,4 TO THE NEW ARRAY OF INT AND PRITING VALUE\n";
 	std::cout << test3[0] << "\n" << test3[1] << "\n" << test3[2] << "\n" << test3[3] << "\n" << test3[4] << std::endl;
 	std::cout << "--------------------------------------------------------\n";
@@ -55,5 +55,53 @@ int	main( void ){
 	catch (std::exception& d){
 		std::cout << d.what();
 	}
+	std::cout << "\n\nTESTING WITH EVAL MAIN\n";
+	   Array<int> numbers(MAX_VAL);
+    int* mirror = new int[MAX_VAL];
+    srand(time(NULL));
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+        const int value = rand();
+        numbers[i] = value;
+        mirror[i] = value;
+    }
+    //SCOPE
+    {
+        Array<int> tmp = numbers;
+        Array<int> test(tmp);
+    }
 
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+        if (mirror[i] != numbers[i])
+        {
+            std::cerr << "didn't save the same value!!" << std::endl;
+            return 1;
+        }
+    }
+    try
+    {
+        numbers[-2] = 0;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    try
+    {
+        numbers[MAX_VAL] = 0;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+        numbers[i] = rand();
+    }
+    delete [] mirror;
+    return 0;
 }
+
+
