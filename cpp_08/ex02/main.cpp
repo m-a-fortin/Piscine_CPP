@@ -6,7 +6,7 @@
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 18:40:02 by mafortin          #+#    #+#             */
-/*   Updated: 2022/05/17 15:59:22 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/05/23 12:57:09 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 int	main(void){
 
 	{
-	MutantStack<int> s1 =;
-	std::cout << "TESTING MUTANTSTACK\n\nASSIGNING VALUE WITH PUSH(STACK) FROM 0 TO 50\n";
+	MutantStack<int> s1;
+	std::cout << "TESTING MUTANTSTACK\n\nASSIGNING VALUE WITH PUSH(STACK) FROM 0 TO 10\n";
 	for (int i = 0; i <= 10; i++)
 	{
 		s1.push(i);
@@ -32,7 +32,7 @@ int	main(void){
 	}
 	{
 	std::list<int> s1;
-	std::cout << "TESTING LIST(should be the same)\n\nASSIGNING VALUE WITH PUSH(STACK) FROM 0 TO 50\n";
+	std::cout << "TESTING LIST(should be the same)\n\nASSIGNING VALUE WITH PUSH(STACK) FROM 0 TO 10\n";
 	for (int i = 0; i <= 10; i++)
 	{
 		s1.push_back(i);
